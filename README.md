@@ -15,7 +15,7 @@
 
 
 
-OpenCV - HaarCascades
+# OpenCV - HaarCascades
 
 We are going to use one classifier which is already trained on a lot of face data. It is pretrained model. It basically looks for some special kind of features present on face. So we directly use this HaarCascades to detect faces. It uses **ADABOOST**
 
