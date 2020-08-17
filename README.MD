@@ -27,7 +27,25 @@ AdaBoost is one of the first boosting algorithms to be adapted in solving practi
 
 [AdaBoost](https://www.youtube.com/watch?v=LsK-xG1cLYA)
 
+## Haar-cascade Detection in OpenCV
 
+OpenCV comes with a trainer as well as detector. If you want to train your own classifier for any object like car, planes etc. you can use OpenCV to create one.
+
+Here we will deal with detection. OpenCV already contains many pre-trained classifiers for face, eyes, smile etc. Those XML files are stored in `haarcascade_frontalface_alt.xml` file. Let’s create face and eye detector with OpenCV.
+
+First we need to load the required XML classifiers.
+
+```
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+```
+
+Now we find the faces in the image. If faces are found, it returns the positions of detected faces as Rect(x,y,w,h). Once we get these locations, we can create a ROI(Region of Interest) for the face .
+
+```
+faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+for (x,y,w,h) in faces:
+    img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+```
 
 
 
